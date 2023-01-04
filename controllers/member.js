@@ -113,7 +113,7 @@ exports.update = (req, res) => {
 
 exports.remove = (req, res)=>{
   const id = req.params.id;
-  Member.findOneAndRemove({id}).exec((err,data)=>{
+  Member.findOneAndRemove({_id:id}).exec((err,data)=>{
     if(err){
       return res.status(404).json({
         error: err,

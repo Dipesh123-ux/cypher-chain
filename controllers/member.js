@@ -58,7 +58,7 @@ exports.list = (req, res) => {
 
 exports.photo = (req, res) => {
   const id = req.params.id;
-  Member.find({ id })
+  Member.find({_id:id})
     .select("photo")
     .exec((err, pic) => {
       if (err) {

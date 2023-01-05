@@ -75,7 +75,7 @@ exports.photo = (req, res) => {
 
 exports.update = (req, res) => {
   const id = req.params.id;
-  Member.findOne({ id }).exec((err, oldMem) => {
+  Member.findOne({ _id:id }).exec((err, oldMem) => {
     if (err) {
       return res.status(400).json({
         error: err,
